@@ -3,8 +3,8 @@ const morgan = require("morgan");
 const fs = require("fs");
 const https = require("https");
 const cors = require("cors");
-var pKey = fs.readFileSync('actasalinstante.key');
-var pCert = fs.readFileSync('actasalinstante.crt');
+var pKey = fs.readFileSync('./actasalinstante.key');
+var pCert = fs.readFileSync('./actasalinstante.crt');
 
 
 const app = express();
@@ -13,14 +13,16 @@ const cron = require("./auto/cron");
 
 app.use(cors());
 
+const port = 3031;
+
 const options = {
     cert: pCert,
     key: pKey
   }
 
 
-const server = https.createServer(options, app).listen(3031, ()=> {
-  console.log("Server working on port 3031");
+const server = https.createServer(options, app).listen(port, ()=> {
+  console.log(`Server is listening on ${port}`);
 });
 
 
