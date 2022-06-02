@@ -14,8 +14,8 @@ const cron = require("./auto/cron");
 app.use(cors());
 
 const options = {
-    key: pKey,
-    cert: pCert
+    cert: pCert,
+    key: pKey
   }
 
 
