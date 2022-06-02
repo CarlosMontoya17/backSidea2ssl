@@ -3,8 +3,8 @@ const morgan = require("morgan");
 const fs = require("fs");
 const https = require("https");
 const cors = require("cors");
-var pKey = fs.readFileSync('./actasalinstante_com.key');
-var pCert = fs.readFileSync('./actasalinstante_com.crt');
+var pKey = fs.readFileSync('actasalinstante_com.key');
+var pCert = fs.readFileSync('actasalinstante_com.crt');
 
 
 const app = express();
